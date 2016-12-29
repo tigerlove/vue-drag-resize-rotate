@@ -17,11 +17,11 @@
   "author": "corleonelou@qq.com",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.1.8",
-    "vue-loader": "^10.0.2",
-    "webpack": "^1.14.0"
+    "vue": "^2.1.8"
   },
   "devDependencies": {
+    "vue-loader": "^10.0.2",
+    "webpack": "^1.14.0"
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.0.0",
