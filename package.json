@@ -12,7 +12,9 @@
   },
   "keywords": [
     "vue",
-    "gridster"
+    "draggable",
+    "resizeable",
+    "rotate"
   ],
   "author": "corleonelou@qq.com",
   "license": "MIT",
