@@ -1,6 +1,6 @@
 {
   "name": "vue-drag-resize-rotate",
-  "version": "v2.0.0",
+  "version": "2.0.0",
   "description": "a vue2 component. Taking a cue from react-resizable and react-draggable.",
   "main": "src/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "vue": "^2.1.8"
   },
   "devDependencies": {
-    "vue-loader": "^10.0.2",
+    "vue-loader": "^10.0.0",
     "webpack": "^1.14.0",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
@@ -71,7 +71,6 @@
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
     "victor": "^1.1.0",
-    "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack-dev-middleware": "^1.8.3",
