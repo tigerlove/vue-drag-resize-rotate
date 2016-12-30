@@ -18,10 +18,15 @@
     "rotate",
     "rotatable"
   ],
+  "files":[
+    "dist",
+    "src/vue-drag-resize-rotate.vue"
+  ],
   "author": "corleonelou@qq.com",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.1.8"
+    "vue": "^2.1.8",
+    "victor": "^1.1.0"
   },
   "devDependencies": {
     "vue-loader": "^10.0.0",
@@ -70,7 +75,6 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
-    "victor": "^1.1.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack-dev-middleware": "^1.8.3",
