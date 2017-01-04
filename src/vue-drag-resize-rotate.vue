@@ -269,7 +269,6 @@ export default {
       this.lastW = this.w
       this.lastH = this.h
     },
-
     handleDown: function(e) {
       if (this.handle && !matchesSelector(e.target, this.handle)) {
         return
@@ -299,8 +298,8 @@ export default {
         let deltaxround = Math.round(deltax / this.grid[0]) * this.grid[0]
         let deltayround = Math.round(deltay / this.grid[1]) * this.grid[1]
 
-        let thisx = this.x
-        let thisy = this.y
+        let thisx = this.localx
+        let thisy = this.localy
 
         if (this.grid[0] > 0 && this.grid[1] > 0) {
           if (this.axis === 'both') {
@@ -326,21 +325,33 @@ export default {
           [thisx, thisy] = getBoundPosition(this.bounds, this.$el, thisx, thisy)
         }
 
-        this.x = thisx
-        this.y = thisy
+        this.localx = thisx
+        this.localy = thisy
       }
       if (this.resizing) {
-        this.w = parseInt(this.lastW) + parseInt(e.clientX) - parseInt(this.resizeStartX)
-        this.h = parseInt(this.lastH) + parseInt(e.clientY) - parseInt(this.resizeStartY)
+        this.localw = parseInt(this.lastW) + parseInt(e.clientX) - parseInt(this.resizeStartX)
+        this.localh = parseInt(this.lastH) + parseInt(e.clientY) - parseInt(this.resizeStartY)
       }
       if (this.rotating) {
-        this.rotate = parseInt(this.r) + this.getRotateAngle(e.clientX, e.clientY)
+        this.localr = parseInt(this.r) + this.getRotateAngle(e.clientX, e.clientY)
       }
+      this.$emit('change', {
+        x: this.localx,
+        y: this.localy,
+        w: this.localw,
+        h: this.localh,
+        r: this.localr
+      })
     }
   },
 
   data: function() {
     return {
+      localx: this.x,
+      localy: this.y,
+      localw: this.w,
+      localh: this.h,
+      localr: this.r,
       lastX: 0,
       lastY: 0,
       dragging: false,
@@ -355,9 +366,9 @@ export default {
   computed: {
     boxStyle: function() {
       return {
-        width: this.w + 'px',
-        height: this.h + 'px',
-        transform: 'translate(' + this.x + 'px,' + this.y + 'px) rotate(' + this.rotate + 'deg)'
+        width: this.localw + 'px',
+        height: this.localh + 'px',
+        transform: 'translate(' + this.localx + 'px,' + this.localy + 'px) rotate(' + this.localr + 'deg)'
       }
     }
   }
