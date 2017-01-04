@@ -11,7 +11,7 @@ npm install vue-drag-resize-rotate
 ```
 <template>
 <div>
-  <vue-drr :w='180' :h='180' :r='0' :rotatable='false'>
+  <vue-drr :w='180' :h='180' :r='0' :rotatable='false' v-on:change="showchange">
     I can be dragged anywhere
   </vue-drr>
   <div style="height: 500px; width: 500px;float:left;position: relative;border: 1px solid black;padding:5px">
@@ -54,6 +54,11 @@ export default {
   name: 'app',
   components: {
     'vue-drr': VueDRR
+  },
+  methods: {
+    showchange: function (data) {
+      console.log(JSON.stringify(data))
+    }
   }
 }
 </script>
