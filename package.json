@@ -1,6 +1,6 @@
 {
   "name": "vue-drag-resize-rotate",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "a vue2 component. Taking a cue from react-resizable and react-draggable.",
   "main": "dist/vue-drag-resize-rotate.js",
   "scripts": {
