@@ -266,8 +266,8 @@ export default {
       this.resizeStartX = e.clientX
       this.resizeStartY = e.clientY
       this.resizing = true
-      this.lastW = this.w
-      this.lastH = this.h
+      this.lastW = this.localw
+      this.lastH = this.localh
     },
     handleDown: function(e) {
       if (this.handle && !matchesSelector(e.target, this.handle)) {
