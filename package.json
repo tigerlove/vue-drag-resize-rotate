@@ -25,8 +25,9 @@
   "author": "corleonelou@qq.com",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.1.8",
-    "victor": "^1.1.0"
+    "lodash": "^4.17.4",
+    "victor": "^1.1.0",
+    "vue": "^2.1.8"
   },
   "devDependencies": {
     "vue-loader": "^10.0.0",

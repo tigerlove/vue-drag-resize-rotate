@@ -286,6 +286,13 @@ export default {
       this.dragging = false
       this.resizing = false
       this.rotating = false
+      this.$emit('handleUp', {
+        x: this.localx,
+        y: this.localy,
+        w: this.localw,
+        h: this.localh,
+        r: this.localr
+      })
     },
     handleMove: function(e) {
       if (e.stopPropagation) e.stopPropagation()
@@ -335,13 +342,6 @@ export default {
       if (this.rotating) {
         this.localr = parseInt(this.r) + this.getRotateAngle(e.clientX, e.clientY)
       }
-      this.$emit('change', {
-        x: this.localx,
-        y: this.localy,
-        w: this.localw,
-        h: this.localh,
-        r: this.localr
-      })
     }
   },
 
