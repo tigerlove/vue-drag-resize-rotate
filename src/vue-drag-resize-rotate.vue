@@ -227,6 +227,8 @@ export default {
     } else {
       this.rotate = this.r
     }
+    // doucment下mouseup都会释放拖拽或者缩放事件
+    document.addEventListener('mouseup', this.handleUp)
   },
   beforeDestroy: function() {
     var el = document.documentElement
